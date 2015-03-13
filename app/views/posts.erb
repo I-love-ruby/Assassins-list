@@ -1,0 +1,12 @@
+<div id='head'><h1>Target List. Choose one and elimate the one.</h1></div>
+<br>
+
+
+<ul class="posts">
+<% @posts.each do |post| %>
+  <li id="<%= post.id%>"><a href="/posts/<%= post.id %>"> <%= post.name %></a> - <a class="delete <%=post.id%>" href="posts/<%=post.id%>"> Delete </a> - <a class="update_button" href="posts/<%=post.id%>/edit"> Update </a></li>
+<% end %>
+</ul>
+
+
+<a href="/posts/new">Report a new target.</a>

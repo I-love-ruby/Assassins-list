@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='/stylesheets/normalize.css' type='text/css' />
+  <link rel='stylesheet' href='/stylesheets/application.css' type='text/css' />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src='/js/application.js'></script>
+  <title><%= @title || "Assassins'Lists" %></title>
+</head>
+ <body class="assasin-bg">
+  <audio contorls autoplay>
+<source src="/music/Assassin's Creed 3 - Trouble in Town (Soundtrack OST).mp4">
+
+</audio>
+   <div id="content">
+  <header>
+   <div id="login-toolbar">
+      <% if current_user %>
+        <a href="/logout">Logout  |</a>
+        <a href="/posts"> Posts  |</a>
+        <a href="/profiles/<%= current_user.id%>"> Your profile  |</a>
+        <a href="/comments"> Recent comments </a>
+      <% else %>
+        <a id="login_button" href="/login">Login</a>
+      <% end %>
+    </div>
+  </header>
+  <%= yield %>
+</div>
+</body>
+</html>

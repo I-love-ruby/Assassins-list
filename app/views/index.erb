@@ -1,0 +1,13 @@
+<h1>Welcome!</h1>
+This is the lists!
+
+
+<ul>
+<% @posts.each do |post| %>
+  <a href="/posts/<%= post.id %>"><li> <%= post.name %></li></a>
+  <p> <%= post.user.name %> </p>
+<% end %>
+</ul>
+
+
+<a href="/post/new">Add a new target</a>

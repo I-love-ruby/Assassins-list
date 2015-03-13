@@ -1,0 +1,6 @@
+<ul>
+  <% @comments.each do |comment| %>
+    <li><a href="/profiles/<%= comment.user.id %>"><%= comment.user.name %> </a></li>
+    <p> <%= comment.text %> </p>
+  <%end%>
+</ul>

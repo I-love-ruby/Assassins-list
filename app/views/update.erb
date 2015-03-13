@@ -1,0 +1,12 @@
+<div id='updateform'>
+<form class="update <%=@post.id%>" action="/posts/<%=@post.id%>" method="POST">
+  <input type ="hidden" name="_method" value="PUT">
+  <input type="text" name="name" placeholder="place target name"><br>
+  <input type="text" name="location" placeholder="where the person is?"><br>
+  <input type="text" name="crime" placeholder="what crime?"><br>
+  <input type="text" name="bounty" placeholder="reward_price"><br>
+  <input type="text" name="pic_url" placeholder="put pic_url"><br>
+  <input type="text" name="tagline" placeholder="put their tagline">
+  <input type="submit" value="Submit!">
+</form>
+</div>

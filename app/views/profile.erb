@@ -1,0 +1,11 @@
+<h1>Hello! Brother <%= @user.name %> </h1>
+
+These are all of <%= @user.name %>'s target lists.Please check your posts.
+<ul>
+<% @user.posts.each do |post| %>
+  <li><a href="/posts/<%=post.id%>"><%= post.name %></a></li>
+<% end %>
+
+<% @user.comments.each do |comment| %>
+  <li><a href="/posts/<%=comment.post.id%>"><%= comment.text %></a></li>
+<% end %>

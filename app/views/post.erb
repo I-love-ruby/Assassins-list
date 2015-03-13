@@ -1,0 +1,21 @@
+
+
+<h1><%= @post.name %> </h1>
+
+<p><%= @post.crime %></p>
+<div class="user"><a href="/profiles/<%=@post.id%>"><img src ="<%= @post.pic_url %>"/> <br>name: <%= @post.name %><br>
+ location:<%= @post.location %><br>crime:<%= @post.crime %><br> bounty:<%= @post.bounty %><br>tagline:<%= @post.tagline %>  </a></div>
+<h3>Comments:</h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><%= comment.text %></li>
+    <br>
+    by
+    <a href="/profiles/<%=comment.user.id%>"> <%=comment.user.name%> </a>
+  <% end %>
+</ul>
+<form action="/posts/<%=@post.id%>/comment/new" method="POST">
+  <input type="text" name="comment" placeholder="Your Comment Here!">
+  <input type="text" style="display:none" name="post" value="<%=@post.id%>">
+  <input type="submit" value="Submit!">
+</form>
